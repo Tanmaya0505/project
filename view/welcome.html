@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Registration system PHP and MySQL</title>
+  <link rel="stylesheet" type="text/css" href="<?php echo $project_path;?>css/style.css">
+</head>
+<body>
+<?php
+if(isset($_SESSION["name"])) {
+?>
+  <div class="header">
+  	<h2>Welcome &nbsp; <?php  echo $_SESSION["name"]; ?></h2>
+  </div>
+  <form method="post" >
+  <p>
+	Already a member? <a href="updatepassword.php">Forgot Passwords</a>
+ </p>
+ <p>
+	Already a member? <a href="logout.php">Logout</a>
+ </p>
+	 <?php
+	}else 
+	{
+		?>
+		<script>
+			window.location= "index.php";
+			alert("Please login first");
+		</script>
+		<?php
+	}
+	?>
+	</form>	
+</body>
+</html>
